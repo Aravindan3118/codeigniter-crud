@@ -2,13 +2,17 @@
     <?php if($this->uri->segment(2) == "updated")
               {
                   echo '<p class="text-success">Data Updated</p>';
-                } ?>
+                }
+                if($this->uri->segment(3) == "Deleted")
+                          {
+                              echo '<p class="text-danger">Data Deleted</p>';
+                            } ?>
            <table class="table table-bordered">
                 <tr>
-                     <th>ID</th>
+                     <th>User Id</th>
                      <th>Username</th>
                      <th>Email</th>
-                     <th>phone number</th>
+                     <th>Phone number</th>
                      <th>Edit</th>
                 </tr>
            <?php
@@ -22,7 +26,7 @@
                      <td><?php echo $row->username; ?></td>
                      <td><?php echo $row->user_email; ?></td>
                      <td><?php echo $row->user_mobile; ?></td>
-                     <td><a class="btn btn-danger" href="#" class="delete_data" id="<?php echo $row->user_id; ?>">Delete</a>
+                     <td><a class="btn btn-danger" href="<?php echo base_url(); ?>users/delete_data/<?php echo $row->user_id; ?>" class="delete_data" id="<?php echo $row->user_id; ?>">Delete</a>
                      <a class="btn btn-info" href="<?php echo base_url(); ?>users/update_data/<?php echo $row->user_id; ?>">Edit</a></td>
                 </tr>
            <?php

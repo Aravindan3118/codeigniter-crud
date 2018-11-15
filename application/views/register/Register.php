@@ -8,7 +8,7 @@ background-image: url("<?php echo base_url(); ?>image/signup-bg.jpg");
 }
 </style>
     <div class="main">
- 
+
         <section class="signup">
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
@@ -44,10 +44,6 @@ background-image: url("<?php echo base_url(); ?>image/signup-bg.jpg");
                         <div class="form-group">
                             <input type="text" class="form-input" name="usermobile" placeholder="Enter your Mobile Number"/>
                             <span class="formerror"><?php echo form_error('usermobile'); ?></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="insertdetails" id="submit" class="form-submit" value="Sign up"/>

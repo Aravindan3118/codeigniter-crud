@@ -4,7 +4,7 @@
    */
   class Users extends CI_Controller
   {
-   
+
     public function index()
     {
 
@@ -71,6 +71,17 @@
              //false
              $this->update_data($uid = $this->input->post("hidden_id"));
         }
+      }
+
+      public function delete_data(){
+           $user_id = $this->uri->segment(3);
+           $this->load->model("users_model");
+           $this->users_model->delete_data($user_id);
+           redirect(base_url() . "users/deleted");
+      }
+      public function deleted()
+      {
+           $this->index();
       }
 
     }

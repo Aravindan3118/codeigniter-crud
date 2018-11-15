@@ -25,7 +25,10 @@
            $this->db->where("user_id", $user_id);
            $query = $this->db->get("users");
            return $query;
-           //Select * FROM tbl_user where id = '$id'
+      }
+      function delete_data($user_id){
+           $this->db->where("user_id", $user_id);
+           $this->db->delete("users");
       }
     }
 
