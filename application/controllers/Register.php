@@ -7,8 +7,10 @@ class Register extends CI_Controller
 {
   public function index()
   {
+    $this->load->model("users_model");
+    $data["country"] = $this->users_model->fetch_country();
     $this->load->view('template/header');
-    $this->load->view('register/register');
+    $this->load->view('register/register',$data);
     $this->load->view('template/footer');
   }
 
@@ -20,7 +22,7 @@ class Register extends CI_Controller
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
     $this->form_validation->set_rules('re_password', 'Password Confirmation', 'trim|required|matches[password]');
-    $this->form_validation->set_rules('usermobile', 'Mobile Number', 'trim|required|min_length[8]|numeric');
+    $this->form_validation->set_rules('usermobile', 'Mobile Number', 'trim|required|min_length[10]|numeric');
 
     if($this->form_validation->run())
     {

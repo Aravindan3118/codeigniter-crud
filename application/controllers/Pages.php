@@ -2,7 +2,7 @@
   /**
    *
    */
-  class Pages extends CI_Controller
+  class Pages extends Auth
   {
     public function view($page = 'home')
     {

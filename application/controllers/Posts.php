@@ -1,6 +1,6 @@
 <?php
 
-class posts extends CI_Controller
+class posts extends Auth
 {
   public function index(){
        $this->load->view('template/header');

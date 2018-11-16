@@ -25,11 +25,11 @@ background-image: url("<?php echo base_url(); ?>image/signup-bg.jpg");
                 echo '<p class="text-success">Data Inserted</p>';
            } ?>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="username" id="name" placeholder="Your Name"/>
+                            <input type="text" class="form-input" name="username" id="name" value="<?php if(isset($_POST['insertdetails'])){echo $_POST['username'];} ?>" placeholder="Your Name"/>
                             <span class="formerror"><?php echo form_error('username'); ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                            <input type="email" class="form-input" name="email" id="email" value="<?php if(isset($_POST['insertdetails'])){echo $_POST['email'];} ?>" placeholder="Your Email"/>
                             <span class="formerror"><?php echo form_error('email'); ?></span>
                         </div>
                         <div class="form-group">
@@ -42,8 +42,16 @@ background-image: url("<?php echo base_url(); ?>image/signup-bg.jpg");
                             <span class="formerror"><?php echo form_error('re_password'); ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="usermobile" placeholder="Enter your Mobile Number"/>
+                            <input type="text" class="form-input" name="usermobile" value="<?php if(isset($_POST['insertdetails'])){echo $_POST['usermobile'];} ?>" placeholder="Enter your Mobile Number"/>
                             <span class="formerror"><?php echo form_error('usermobile'); ?></span>
+                        </div>
+                        <div class="form-group">
+                           <select class="form-input" name="country">
+                             <option value="sample">Sample</option>
+                             <?php foreach ($country->result() as $row ): ?>
+                               <option value="<?php echo $row->country_id; ?>"><?php echo $row->country_name; ?></option>
+                             <?php endforeach; ?>
+                           </select>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="insertdetails" id="submit" class="form-submit" value="Sign up"/>

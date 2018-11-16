@@ -26,7 +26,7 @@
                      <td><?php echo $row->username; ?></td>
                      <td><?php echo $row->user_email; ?></td>
                      <td><?php echo $row->user_mobile; ?></td>
-                     <td><a class="btn btn-danger" href="<?php echo base_url(); ?>users/delete_data/<?php echo $row->user_id; ?>" class="delete_data" id="<?php echo $row->user_id; ?>">Delete</a>
+                     <td><a class="btn btn-danger delete_data" id="<?php echo $row->user_id; ?>">Delete</a>
                      <a class="btn btn-info" href="<?php echo base_url(); ?>users/update_data/<?php echo $row->user_id; ?>">Edit</a></td>
                 </tr>
            <?php
@@ -43,3 +43,18 @@
            ?>
            </table>
       </div>
+      <script>
+     $(document).ready(function(){
+          $('.delete_data').click(function(){
+               var id = $(this).attr("id");
+               if(confirm("Are you sure you want to delete this?"))
+               {
+                    window.location="<?php echo base_url(); ?>users/delete_data/"+id;
+               }
+               else
+               {
+                    return false;
+               }
+          });
+     });
+     </script>

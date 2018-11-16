@@ -2,7 +2,7 @@
   /**
    *
    */
-  class Users extends CI_Controller
+  class Users extends Auth
   {
 
     public function index()

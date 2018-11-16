@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+// if($this->uri->segment(1) != "login" && $this->uri->segment(1) != "register")
+// {
+  // if (!$this->session->userdata('user_id')) {
+    // redirect('login', 'refresh');
+  // }
+// }
+
+ ?>
 <html lang = "en">
 
    <head>
@@ -6,6 +15,8 @@
       <title>CodeIgniter View Example</title>
       <!-- <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css"> -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom-style.css">
       <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
